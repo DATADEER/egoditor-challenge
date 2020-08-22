@@ -2,7 +2,11 @@
   <nav>
     <div class="left-nav__container">
       <div class="logo__container">
-        <img class="logo__img" src="@/imgs/logo-icon-blue.svg" />
+        <img
+          class="logo__img"
+          src="./../assets/imgs/logo-icon-blue.svg"
+          alt="egoditor logo"
+        />
         <h2 class="logo__text">QR Code Generator</h2>
       </div>
       <div class="vertical-separator"></div>
@@ -10,6 +14,20 @@
       <i class="fas fa-bars menu__icon"></i>
     </div>
     <div class="right-nav__container">
+      <img
+        @click="setLanguage('en')"
+        class="flag__icon"
+        :class="{ active: isCurrentLanguage('en') }"
+        src="./../assets/imgs/flags/en.svg"
+        alt="uk flag"
+      /><img
+        @click="setLanguage('de')"
+        class="flag__icon"
+        :class="{ active: isCurrentLanguage('de') }"
+        src="./../assets/imgs/flags/de.svg"
+        alt="german flag"
+      />
+      <div class="vertical-separator"></div>
       <i class="fas fa-bell bell__icon"></i>
       <i class="fas fa-question-circle question__icon"></i>
       <div class="vertical-separator"></div>
@@ -20,9 +38,21 @@
 </template>
 
 <script>
-export default {
-  name: "Navbar"
-};
+import { Component, Vue } from "vue-property-decorator";
+
+@Component
+export default class Navbar extends Vue {
+  setLanguage(langCode) {
+    this.$i18n.locale = langCode;
+  }
+  isCurrentLanguage(langCode) {
+    return this.$i18n.locale === langCode;
+  }
+
+  mounted() {
+    this.$i18n.locale = "en";
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -32,6 +62,16 @@ export default {
   color: $light-blue;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.flag__icon {
+  width: 1.4rem;
+  margin-right: 1.2rem;
+  cursor: pointer;
+  opacity: 0.2;
+  &.active {
+    opacity: 1;
+  }
 }
 
 .bell__icon,
@@ -105,6 +145,7 @@ nav {
 }
 
 .account_link {
+  width: 65px;
   color: $link-blue;
   font-weight: 700;
   font-size: 1.1rem;
