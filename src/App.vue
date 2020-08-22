@@ -19,8 +19,13 @@ export default class App extends Vue {}
 <style lang="scss">
 @import "./css/reset.scss";
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
 </style>
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: "Source Sans Pro", sans-serif;
   -webkit-font-smoothing: antialiased;

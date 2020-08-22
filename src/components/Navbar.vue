@@ -1,6 +1,21 @@
 <template>
   <nav>
-    <p>{{ $t("account") }}</p>
+    <div class="left-nav__container">
+      <div class="logo__container">
+        <img class="logo__img" src="@/imgs/logo-icon-blue.svg" />
+        <h2 class="logo__text">QR Code Generator</h2>
+      </div>
+      <div class="vertical-separator"></div>
+      <i class="fas fa-angle-left arrow-left__icon"></i>
+      <i class="fas fa-bars menu__icon"></i>
+    </div>
+    <div class="right-nav__container">
+      <i class="fas fa-bell bell__icon"></i>
+      <i class="fas fa-question-circle question__icon"></i>
+      <div class="vertical-separator"></div>
+      <i class="fas fa-user user__icon"></i>
+      <span class="account_link">{{ $t("account") }}</span>
+    </div>
   </nav>
 </template>
 
@@ -10,15 +25,100 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@import "./../css/variables.scss";
+
+.fas {
+  color: $light-blue;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.bell__icon,
+.question__icon {
+  margin-right: 1.5rem;
+}
+
+.user__icon {
+  margin-right: 0.5rem;
+}
+
+.vertical-separator {
+  border-left: 2px solid $light-gray;
+  height: 15px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  box-shadow: 0px 2px 5px 0px rgba(168, 168, 168, 0.6);
+}
+
+.left-nav__container {
+  display: inline-flex;
+  align-items: center;
+  margin-right: auto;
+
+  .vertical-separator {
+    margin-left: 3.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.right-nav__container {
+  display: inline-flex;
+  align-items: center;
+
+  .vertical-separator {
+    margin-right: 1.5rem;
+  }
+}
+
+.logo__container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.logo__img {
+  width: 1.6rem;
+  margin-right: 0.5rem;
+}
+.logo__text {
+  color: $title-blue;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.1rem;
+
+  &:after {
+    position: absolute;
+    content: "PRO";
+    right: -2rem;
+    letter-spacing: 0rem;
+    color: $white;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    background-color: deepskyblue;
+    padding: 0.2rem 0.2rem;
+  }
+}
+
+.account_link {
+  color: $link-blue;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+</style>
 
 <i18n>
 {
 "en": {
-"account": "account"
+"account": "Account"
 },
 "de": {
-"account": "konto"
+"account": "Konto"
 }
 }
 </i18n>
