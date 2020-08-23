@@ -115,15 +115,3 @@ export default class App extends Vue {
   }
 }
 </style>
-<i18n>
-{
-"en": {
-"edit": "Edit",
-"save": "Save"
-},
-"de": {
-"edit": "Bearbeiten",
-"save": "Speichern"
-}
-}
-</i18n>

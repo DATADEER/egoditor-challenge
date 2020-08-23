@@ -152,14 +152,3 @@ nav {
   cursor: pointer;
 }
 </style>
-
-<i18n>
-{
-"en": {
-"account": "Account"
-},
-"de": {
-"account": "Konto"
-}
-}
-</i18n>
