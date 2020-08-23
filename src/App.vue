@@ -14,9 +14,11 @@
           >
           <div class="company-title__button" @click="saveCompanyTitle">
             <span v-if="isEditingCompanyTitle">
-              Save <i class="fas fa-save"></i
+              {{ $t("save") }} <i class="fas fa-save"></i
             ></span>
-            <span v-else> Edit <i class="fas fa-pencil-alt"></i></span>
+            <span v-else>
+              {{ $t("edit") }} <i class="fas fa-pencil-alt"></i
+            ></span>
           </div>
         </div>
       </div>
@@ -37,7 +39,8 @@ export default class App extends Vue {
   companyTitle = "Egoditor GmbH"; //TODO: Fill with API Response
   isEditingCompanyTitle = false;
 
-  saveCompanyTitle() {
+  saveCompanyTitle(): void {
+    console.log("lang", this.$root.i18n);
     if (this.isEditingCompanyTitle) {
       this.companyTitle = this.$refs.companyTitleInput.innerText;
     }
@@ -112,3 +115,15 @@ export default class App extends Vue {
   }
 }
 </style>
+<i18n>
+{
+"en": {
+"edit": "Edit",
+"save": "Save"
+},
+"de": {
+"edit": "Bearbeiten",
+"save": "Speichern"
+}
+}
+</i18n>
