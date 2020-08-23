@@ -1,5 +1,5 @@
 export interface UsageData {
-  title: string;d
+  title: string;
   value: number;
   limit: number;
 }
