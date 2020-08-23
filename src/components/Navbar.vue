@@ -66,7 +66,7 @@ export default class Navbar extends Vue {
 
 .flag__icon {
   width: 1.4rem;
-  margin-right: 1.2rem;
+  margin-right: $spacer-4;
   cursor: pointer;
   opacity: 0.2;
   &.active {
@@ -76,7 +76,7 @@ export default class Navbar extends Vue {
 
 .bell__icon,
 .question__icon {
-  margin-right: 1.5rem;
+  margin-right: $spacer-5;
 }
 
 .user__icon {
@@ -92,7 +92,7 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: $spacer-5 $spacer-4;
   box-shadow: 0px 2px 5px 0px rgba(168, 168, 168, 0.6);
 }
 
@@ -103,7 +103,7 @@ nav {
 
   .vertical-separator {
     margin-left: 3.5rem;
-    margin-right: 1.5rem;
+    margin-right: $spacer-5;
   }
 }
 
@@ -112,7 +112,7 @@ nav {
   align-items: center;
 
   .vertical-separator {
-    margin-right: 1.5rem;
+    margin-right: $spacer-5;
   }
 }
 
@@ -127,8 +127,8 @@ nav {
 }
 .logo__text {
   color: $title-blue;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: $size-big;
+  font-weight: $weight-bolder;
   letter-spacing: -0.1rem;
 
   &:after {
@@ -148,7 +148,7 @@ nav {
   width: 65px;
   color: $link-blue;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: $size-regular;
   cursor: pointer;
 }
 </style>
