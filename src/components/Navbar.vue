@@ -32,7 +32,7 @@
       <i class="fas fa-question-circle question__icon"></i>
       <div class="vertical-separator"></div>
       <i class="fas fa-user user__icon"></i>
-      <span class="account_link">{{ $t("account") }}</span>
+      <span class="account_link">{{ $t("pages.account") }}</span>
     </div>
   </nav>
 </template>
@@ -93,7 +93,7 @@ nav {
   display: flex;
   align-items: center;
   padding: $spacer-5 $spacer-4;
-  box-shadow: 0px 2px 5px 0px rgba(168, 168, 168, 0.6);
+  box-shadow: $box-shadow-bottom-hard;
 }
 
 .left-nav__container {

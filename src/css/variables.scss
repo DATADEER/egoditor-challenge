@@ -4,8 +4,8 @@ $title-blue: #1b294b;
 $subtitle-blue: #53678c;
 $link-blue: #1974d2;
 
-$text-gray:#77858c;
 $text-dark-gray: #4a5961;
+$text-gray:#77858c;
 $light-gray: #c7ced0;
 $lightest-gray: #f5f8fa;
 $white: #ffffff;
@@ -37,4 +37,8 @@ $spacer-7: 2.5rem;
 
 //border-radius
 $border-radius-regular: 5px;
+
+//box-shadows
+$box-shadow-bottom-subtle: 0px 2px 0px 0px rgba(168, 168, 168, 0.2);
+$box-shadow-bottom-hard: 0px 2px 5px 0px rgba(168, 168, 168, 0.6);
 

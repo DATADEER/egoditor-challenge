@@ -1,5 +1,13 @@
 {
-  "account": "Konto",
+
   "edit": "Bearbeiten",
-  "save": "Speichern"
+  "save": "Speichern",
+  "pages": {
+    "account": "Konto",
+    "settings": "Einstellungen",
+    "usermanagement": "Nutzerverwaltung",
+    "whitelabel": "White Label",
+    "apikeys": "API Keys",
+    "billing": "Rechnungen"
+  }
 }

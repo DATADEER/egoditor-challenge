@@ -1,5 +1,12 @@
 {
-  "account": "Account",
   "edit": "Edit",
-  "save": "Save"
+  "save": "Save",
+  "pages": {
+    "account": "Account",
+    "settings": "Settings",
+    "usermanagement": "User Management",
+    "whitelabel": "White Label",
+    "apikeys": "API Keys",
+    "billing": "Billing"
+  }
 }

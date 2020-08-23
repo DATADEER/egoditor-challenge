@@ -22,6 +22,16 @@
           </div>
         </div>
       </div>
+      <div class="tab-nav__wrapper">
+        <div class="tab-nav__container">
+          <a class="active">{{ $t("pages.account") }}</a>
+          <a>{{ $t("pages.settings") }}</a>
+          <a>{{ $t("pages.usermanagement") }}</a>
+          <a>{{ $t("pages.whitelabel") }}</a>
+          <a>{{ $t("pages.apikeys") }}</a>
+          <a>{{ $t("pages.billing") }}</a>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -29,10 +39,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Navbar from "@/components/Navbar.vue";
+import Account from "@/views/Account.vue";
 
 @Component({
   components: {
-    Navbar
+    Navbar,
+    Account
   }
 })
 export default class App extends Vue {
@@ -78,6 +90,26 @@ export default class App extends Vue {
 <style scoped lang="scss">
 @import "./css/variables.scss";
 
+.tab-nav__wrapper {
+  margin-top: $spacer-7;
+  box-shadow: $box-shadow-bottom-subtle;
+}
+.tab-nav__container {
+  display: flex;
+  padding-left: $spacer-7;
+  color: $text-gray;
+  font-size: $size-regular;
+  font-weight: $weight-bold;
+  a {
+    cursor: pointer;
+    margin-right: $spacer-6;
+    &.active {
+      padding: 0 $spacer-3 $spacer-3 $spacer-3;
+      border-bottom: 2px solid $light-blue;
+    }
+  }
+}
+
 .head-section__container {
   margin-left: $spacer-7;
   margin-top: $spacer-6;
@@ -93,8 +125,9 @@ export default class App extends Vue {
   font-size: $size-bigger;
   font-weight: $weight-bolder;
   color: $title-blue;
-  padding: $spacer-2;
+
   &.active {
+    padding: $spacer-2;
     border: 1px solid $light-gray;
     border-radius: $border-radius-regular;
   }
