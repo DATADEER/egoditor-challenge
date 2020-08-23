@@ -1,6 +1,7 @@
 <template>
   <div class="account__container">
     <Usage :usage-data="usageData"></Usage>
+    <WhoAreYou></WhoAreYou>
   </div>
 </template>
 
@@ -8,10 +9,11 @@
 import { Component, Prop } from "vue-property-decorator";
 import Vue from "vue";
 import Usage from "@/components/Usage.vue";
+import WhoAreYou from "@/components/WhoAreYou.vue";
 import { UsageData } from "@/interfaces/UsageData.interface";
 import axios from "axios";
 
-@Component({ components: { Usage } })
+@Component({ components: { Usage, WhoAreYou } })
 export default class Account extends Vue {
   usageData: UsageData[] = [];
   async mounted() {

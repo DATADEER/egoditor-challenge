@@ -8,12 +8,21 @@
     "whitelabel": "White Label",
     "apikeys": "API Keys",
     "billing": "Billing",
-    "usage": "Usage"
+    "usage": "Usage",
+    "whoareyou": "Who are you?"
   },
   "usage": {
     "scans": "Scans",
     "dynamiccodes": "Dynamic Codes",
     "staticcodes": "Static Codes",
     "users": "Users"
+  },
+  "whoareyou" : {
+    "explain": "For the best possible experience, please let us know who you are",
+    "business": "business",
+    "agency": "agency",
+    "nonprofit": "nonprofit",
+    "educational": "educational",
+    "private": "private"
   }
 }
