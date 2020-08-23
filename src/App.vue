@@ -81,6 +81,12 @@ export default class App extends Vue {
   color: $title-blue;
 }
 
+.subtitle {
+  color: $title-blue;
+  font-weight: $weight-bolder;
+  font-size: $size-big;
+}
+
 .fas {
   color: $light-blue;
   font-size: $size-icon;

@@ -1,6 +1,6 @@
 <template>
   <div class="usage__container">
-    <h3 class="usage__title">{{ $t("titles.usage") }}</h3>
+    <h3 class="usage__title subtitle">{{ $t("titles.usage") }}</h3>
     <div class="usage-tiles__wrapper">
       <div
         v-for="stats in usageData"
@@ -12,7 +12,10 @@
         <div class="tile__separator">&nbsp;</div>
         <p v-if="stats.limit >= 0" class="tile__limit">{{ stats.limit }}</p>
         <p v-else class="tile__limit">Unlimited</p>
-        <button class="tile__upgrade">UPGRADE</button>
+        <button v-if="stats.title === 'users'" class="tile__upgrade">
+          ADD USERS
+        </button>
+        <button v-else class="tile__upgrade">UPGRADE</button>
       </div>
     </div>
   </div>
@@ -33,12 +36,8 @@ export default class Usage extends Vue {
 @import "./../css/variables.scss";
 
 .usage__title {
-  color: $title-blue;
-  font-weight: $weight-bolder;
-  font-size: $size-big;
   margin-bottom: $spacer-5;
 }
-
 .usage-tiles__wrapper {
   display: flex;
 }
