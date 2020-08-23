@@ -24,14 +24,15 @@
       </div>
       <div class="tab-nav__wrapper">
         <div class="tab-nav__container">
-          <a class="active">{{ $t("pages.account") }}</a>
-          <a>{{ $t("pages.settings") }}</a>
-          <a>{{ $t("pages.usermanagement") }}</a>
-          <a>{{ $t("pages.whitelabel") }}</a>
-          <a>{{ $t("pages.apikeys") }}</a>
-          <a>{{ $t("pages.billing") }}</a>
+          <a class="active">{{ $t("titles.account") }}</a>
+          <a>{{ $t("titles.settings") }}</a>
+          <a>{{ $t("titles.usermanagement") }}</a>
+          <a>{{ $t("titles.whitelabel") }}</a>
+          <a>{{ $t("titles.apikeys") }}</a>
+          <a>{{ $t("titles.billing") }}</a>
         </div>
       </div>
+      <Account></Account>
     </section>
   </div>
 </template>

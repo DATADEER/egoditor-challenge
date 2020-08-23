@@ -2,12 +2,19 @@
 
   "edit": "Bearbeiten",
   "save": "Speichern",
-  "pages": {
+  "titles": {
     "account": "Konto",
     "settings": "Einstellungen",
     "usermanagement": "Nutzerverwaltung",
     "whitelabel": "White Label",
     "apikeys": "API Keys",
-    "billing": "Rechnungen"
+    "billing": "Rechnungen",
+    "usage": "Verwendung"
+  },
+  "usage": {
+    "scans": "Scans",
+    "dynamiccodes": "Dynamische Codes",
+    "staticcodes": "Statische Codes",
+    "users": "Nutzer"
   }
 }

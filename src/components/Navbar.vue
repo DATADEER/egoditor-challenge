@@ -32,20 +32,20 @@
       <i class="fas fa-question-circle question__icon"></i>
       <div class="vertical-separator"></div>
       <i class="fas fa-user user__icon"></i>
-      <span class="account_link">{{ $t("pages.account") }}</span>
+      <span class="account_link">{{ $t("titles.account") }}</span>
     </div>
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class Navbar extends Vue {
-  setLanguage(langCode) {
+  setLanguage(langCode: string) {
     this.$i18n.locale = langCode;
   }
-  isCurrentLanguage(langCode) {
+  isCurrentLanguage(langCode: string) {
     return this.$i18n.locale === langCode;
   }
 

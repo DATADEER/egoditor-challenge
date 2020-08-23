@@ -1,12 +1,19 @@
 {
   "edit": "Edit",
   "save": "Save",
-  "pages": {
+  "titles": {
     "account": "Account",
     "settings": "Settings",
     "usermanagement": "User Management",
     "whitelabel": "White Label",
     "apikeys": "API Keys",
-    "billing": "Billing"
+    "billing": "Billing",
+    "usage": "Usage"
+  },
+  "usage": {
+    "scans": "Scans",
+    "dynamiccodes": "Dynamic Codes",
+    "staticcodes": "Static Codes",
+    "users": "Users"
   }
 }
