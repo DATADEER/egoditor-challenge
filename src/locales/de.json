@@ -23,7 +23,8 @@
     "scans": "Scans",
     "dynamiccodes": "Dynamische Codes",
     "staticcodes": "Statische Codes",
-    "users": "Nutzer"
+    "users": "Nutzer",
+    "addusers": "Mehr Nutzer"
   },
   "whoareyou" : {
     "explain": "Für das beste Nutzererlebnis, sagen sie und bitte wer sie sind",

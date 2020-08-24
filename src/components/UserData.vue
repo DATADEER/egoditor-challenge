@@ -3,7 +3,7 @@
     <h3 class="user-data__title subtitle">{{ $t("titles.primarycontact") }}</h3>
     <p class="user-data__explainer">{{ $t("whoareyou.explain") }}</p>
     <v-form>
-      <v-container>
+      <v-container class="user-data-form__container" fluid>
         <v-row no-gutters>
           <v-col cols="12">
             <v-text-field
@@ -133,7 +133,7 @@ export default class UserData extends Vue {
 @import "./../css/variables.scss";
 
 .user-data__title {
-  margin-bottom: $spacer-3;
+  margin-bottom: 0;
 }
 
 .user-data__explainer {
@@ -151,7 +151,7 @@ export default class UserData extends Vue {
   float: right;
 }
 
-.user-data__container {
-  width: 40%;
+.user-data-form__container {
+  padding: 0;
 }
 </style>

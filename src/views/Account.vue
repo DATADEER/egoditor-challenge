@@ -1,9 +1,13 @@
 <template>
   <div class="account__container">
-    <Profile></Profile>
-    <UserData></UserData>
-    <Usage :usage-data="usageData"></Usage>
-    <WhoAreYou></WhoAreYou>
+    <div class="user-data__card">
+      <Profile class="profile-component"></Profile>
+      <UserData></UserData>
+    </div>
+    <div>
+      <Usage class="usage-component" :usage-data="usageData"></Usage>
+      <WhoAreYou></WhoAreYou>
+    </div>
   </div>
 </template>
 
@@ -25,5 +29,25 @@ export default class Account extends Vue {}
 
 .account__container {
   background-color: $lightest-gray;
+  display: grid;
+  grid-template-columns: 1.3fr 2fr;
+  grid-column-gap: $spacer-8;
+  padding: $spacer-7 $spacer-8;
+}
+
+.usage-component {
+  margin-top: $spacer-5;
+  margin-bottom: 6rem;
+}
+
+.profile-component {
+  margin-bottom: $spacer-7;
+}
+
+.user-data__card {
+  border-radius: $border-radius-regular;
+  padding: $spacer-5 $spacer-6;
+  background-color: $white;
+  box-shadow: $box-shadow-bottom-right-subtle;
 }
 </style>

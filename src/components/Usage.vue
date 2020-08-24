@@ -12,10 +12,12 @@
         <div class="tile__separator">&nbsp;</div>
         <p v-if="stats.limit >= 0" class="tile__limit">{{ stats.limit }}</p>
         <p v-else class="tile__limit">Unlimited</p>
-        <button v-if="stats.title === 'users'" class="tile__upgrade">
-          ADD USERS
-        </button>
-        <button v-else class="tile__upgrade">UPGRADE</button>
+        <div class="tile-footer__wrapper">
+          <button v-if="stats.title === 'users'" class="tile__upgrade">
+            {{ $t("usage.addusers") }}
+          </button>
+          <button v-else class="tile__upgrade">UPGRADE</button>
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +49,9 @@ export default class Usage extends Vue {
   margin-bottom: $spacer-5;
 }
 .usage-tiles__wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .usage-tile__container {
@@ -57,7 +61,6 @@ export default class Usage extends Vue {
   border-radius: $border-radius-regular;
   text-align: center;
   position: relative;
-  width: 10rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -93,6 +96,13 @@ export default class Usage extends Vue {
   margin-bottom: $spacer-4;
 }
 
+.tile-footer__wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -13px;
+}
+
 .tile__upgrade {
   border-radius: $border-radius-round;
   background-color: $light-blue;
@@ -101,8 +111,6 @@ export default class Usage extends Vue {
   font-size: $size-label;
   border: none;
   padding: $spacer-2 $spacer-3;
-  position: absolute;
-  bottom: -13px;
-  right: 3rem;
+  text-transform: uppercase;
 }
 </style>

@@ -17,13 +17,13 @@
         <p class="profile-tile__value">{{ profileData.accountType }}</p>
       </div>
       <div class="profile-tile__container profile-tile__container--wide">
-        <p class="profile-tile__label">{{ $t("titles.account") }}</p>
+        <span class="profile-tile__label">{{ $t("profile.loginemail") }}</span>
         <div class="profile-tile-button__wrapper">
           <button class="profile-tile__button">
             {{ $t("profile.password") }}
           </button>
         </div>
-        <p class="profile-tile__value">{{ profileData.email }}</p>
+        <span class="profile-tile__value">{{ profileData.email }}</span>
         <div class="profile-tile-button__wrapper">
           <button class="profile-tile__button">
             {{ $t("profile.changeemail") }}
@@ -62,7 +62,7 @@ export default class ProfileData extends Vue {
 @import "./../css/variables.scss";
 
 .profile__title {
-  margin-bottom: $spacer-3;
+  margin-bottom: $spacer-5;
 }
 
 .profile-tiles__container {
@@ -74,7 +74,7 @@ export default class ProfileData extends Vue {
 
 .profile-tile__container {
   border: 1px solid $light-gray;
-  padding: $spacer-5;
+  padding: $spacer-4;
   border-radius: $border-radius-regular;
 }
 
@@ -105,7 +105,6 @@ export default class ProfileData extends Vue {
 
 .profile-tile__label {
   font-size: $size-label;
-  margin-bottom: $spacer-4;
   color: $text-gray;
   opacity: 0.7;
   text-transform: uppercase;
@@ -113,7 +112,9 @@ export default class ProfileData extends Vue {
 }
 
 .profile-tile__value {
+  font-size: 1.1rem;
   color: $subtitle-blue;
   font-weight: $weight-bolder;
+  margin-bottom: $spacer-2;
 }
 </style>

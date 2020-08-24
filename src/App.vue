@@ -64,7 +64,7 @@ export default class App extends Vue {
 
 <style lang="scss">
 @import "./css/reset.scss";
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
 
 @import "./css/variables.scss";
@@ -83,7 +83,7 @@ export default class App extends Vue {
 
 .subtitle {
   color: $title-blue;
-  font-weight: $weight-bolder;
+  font-weight: $weight-boldest;
   font-size: $size-big;
 }
 
@@ -130,7 +130,7 @@ export default class App extends Vue {
 
 .company-title__input {
   font-size: $size-bigger;
-  font-weight: $weight-bolder;
+  font-weight: $weight-boldest;
   color: $title-blue;
 
   &.active {

@@ -42,7 +42,7 @@ export default class Usage extends Vue {
 @import "./../css/variables.scss";
 
 .whoareyou__title {
-  margin-bottom: $spacer-3;
+  margin-bottom: 0;
 }
 
 .whoareyou__explainer {
@@ -61,7 +61,7 @@ export default class Usage extends Vue {
   background-color: white;
   border-radius: 15px;
   padding: $spacer-5;
-  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: $box-shadow-bottom-right-subtle;
   font-weight: $weight-bold;
   display: flex;
   align-items: center;
@@ -86,5 +86,6 @@ export default class Usage extends Vue {
 .whoareyou-tile__title {
   color: $link-blue;
   text-transform: uppercase;
+  margin-bottom: $spacer-2;
 }
 </style>

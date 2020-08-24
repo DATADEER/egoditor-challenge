@@ -22,7 +22,8 @@
     "scans": "Scans",
     "dynamiccodes": "Dynamic Codes",
     "staticcodes": "Static Codes",
-    "users": "Users"
+    "users": "Users",
+    "addusers": "add users"
   },
   "whoareyou" : {
     "explain": "For the best possible experience, please let us know who you are",
