@@ -95,35 +95,10 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+@import "./css/global.scss";
 @import "./css/reset.scss";
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;600;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css");
-
-@import "./css/variables.scss";
-
-* {
-  box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-#app {
-  font-family: "Source Sans Pro", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $title-blue;
-}
-
-.subtitle {
-  color: $title-blue;
-  font-weight: $weight-boldest;
-  font-size: $size-big;
-}
-
-.fas {
-  color: $light-blue;
-  font-size: $size-icon;
-  cursor: pointer;
-}
 </style>
 
 <style scoped lang="scss">
