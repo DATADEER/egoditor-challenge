@@ -25,10 +25,18 @@
 import { Component, Prop } from "vue-property-decorator";
 import Vue from "vue";
 import { UsageData } from "@/interfaces/UsageData.interface";
+import axios from "axios";
 
 @Component({})
 export default class Usage extends Vue {
-  @Prop(Array) usageData: UsageData[] = [];
+  usageData: UsageData[] = [];
+  async mounted() {
+    const usageDataRequest = axios.get(
+      "https://my-json-server.typicode.com/DATADEER/egoditor-mock-api/usage"
+    );
+    const usageDataResponse = await usageDataRequest;
+    this.usageData = usageDataResponse.data;
+  }
 }
 </script>
 

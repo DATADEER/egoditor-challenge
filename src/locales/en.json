@@ -1,6 +1,11 @@
 {
   "edit": "Edit",
   "save": "Save",
+  "lang": {
+    "germany": "Germany",
+    "usa": "USA",
+    "poland": "Poland"
+  },
   "titles": {
     "account": "Account",
     "settings": "Settings",
@@ -9,7 +14,9 @@
     "apikeys": "API Keys",
     "billing": "Billing",
     "usage": "Usage",
-    "whoareyou": "Who are you?"
+    "whoareyou": "Who are you?",
+    "primarycontact": "Primary Contact",
+    "information": "Information"
   },
   "usage": {
     "scans": "Scans",
@@ -24,5 +31,24 @@
     "nonprofit": "nonprofit",
     "educational": "educational",
     "private": "private"
+  },
+  "userdata": {
+    "explain": "Please provide your contact information below",
+    "firstname": "First Name",
+    "lastname": "Last Name",
+    "phone": "Phone Number",
+    "company": "Company",
+    "street": "Street",
+    "city": "City",
+    "zip": "Zip Code",
+    "country": "Country",
+    "website": "Website"
+  },
+  "profile": {
+    "customerid": "Customer ID",
+    "signupdate": "Signup Date",
+    "loginemail": "Login Email",
+    "password": "Password",
+    "changeemail": "Change Email"
   }
 }

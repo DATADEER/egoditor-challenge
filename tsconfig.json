@@ -12,11 +12,18 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/vuetify/types",
+      "./node_modules/vue-i18n/types"
+    ],
     "types": [
       "webpack-env",
       "jest",
       "webpack",
-      "webpack-env"
+      "webpack-env",
+      "vuetify",
+      "i18n"
     ],
     "paths": {
       "@/*": [

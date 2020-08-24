@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <v-app id="app">
     <Navbar></Navbar>
     <section class="main-content">
       <div class="head-section__container">
@@ -34,7 +34,7 @@
       </div>
       <Account></Account>
     </section>
-  </div>
+  </v-app>
 </template>
 
 <script lang="ts">
