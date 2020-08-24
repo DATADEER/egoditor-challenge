@@ -102,11 +102,13 @@ import { ContactData } from "@/interfaces/ContactData.interface";
 import axios from "axios";
 import { API_URL } from "@/common/constants";
 import { logError, logSuccess } from "@/common/helper";
+import VueI18n from "vue-i18n";
+import TranslateResult = VueI18n.TranslateResult;
 
 @Component({})
 export default class UserData extends Vue {
   contactData: ContactData | {} = {};
-  get availableCountries() {
+  get availableCountries(): { value: string; text: TranslateResult }[] {
     return [
       { value: "germany", text: this.$t("lang.germany") },
       { value: "poland", text: this.$t("lang.poland") },
@@ -114,7 +116,7 @@ export default class UserData extends Vue {
     ];
   }
 
-  async saveContactData() {
+  async saveContactData(): Promise<void> {
     try {
       const contactDataRequest = axios.post(
         `${API_URL}/contact`,

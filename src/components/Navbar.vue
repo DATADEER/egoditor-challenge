@@ -48,10 +48,10 @@ import { Component, Vue } from "vue-property-decorator";
 
 @Component
 export default class Navbar extends Vue {
-  setLanguage(langCode: string) {
+  setLanguage(langCode: string): void {
     this.$i18n.locale = langCode;
   }
-  isCurrentLanguage(langCode: string) {
+  isCurrentLanguage(langCode: string): boolean {
     return this.$i18n.locale === langCode;
   }
 
