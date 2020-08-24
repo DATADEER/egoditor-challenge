@@ -43,6 +43,7 @@ import Navbar from "@/components/Navbar.vue";
 import Account from "@/views/Account.vue";
 import axios from "axios";
 import { API_URL } from "@/common/constants";
+import { ProfileData } from "@/interfaces/ProfileData.interface";
 
 @Component({
   components: {
@@ -51,7 +52,9 @@ import { API_URL } from "@/common/constants";
   }
 })
 export default class App extends Vue {
-  profileData: ProfileData | {} = {};
+  profileData: ProfileData | { company: string } = {
+    company: "Loading..."
+  };
   isEditingCompanyTitle = false;
 
   saveCompanyTitle(): void {
@@ -59,6 +62,7 @@ export default class App extends Vue {
       this.profileData.company = (this.$refs
         .companyTitleInput as HTMLElement).innerText;
     }
+
     this.isEditingCompanyTitle = !this.isEditingCompanyTitle;
   }
 

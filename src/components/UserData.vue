@@ -107,7 +107,6 @@ import { API_URL } from "@/common/constants";
 export default class UserData extends Vue {
   contactData: ContactData | {} = {};
   get availableCountries() {
-    console.log('this.$t("germany")', this.$t("germany"));
     return [
       { value: "germany", text: this.$t("lang.germany") },
       { value: "poland", text: this.$t("lang.poland") },

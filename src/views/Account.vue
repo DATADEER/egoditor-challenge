@@ -5,7 +5,7 @@
       <UserData></UserData>
     </div>
     <div>
-      <Usage class="usage-component" :usage-data="usageData"></Usage>
+      <Usage class="usage-component"></Usage>
       <WhoAreYou></WhoAreYou>
     </div>
   </div>
@@ -19,11 +19,11 @@ import WhoAreYou from "@/components/WhoAreYou.vue";
 import axios from "axios";
 import UserData from "@/components/UserData.vue";
 import Profile from "@/components/Profile.vue";
-import ProfileData from "@/components/Profile.vue";
+import { ProfileData } from "@/interfaces/ProfileData.interface";
 
 @Component({ components: { Profile, UserData, Usage, WhoAreYou } })
 export default class Account extends Vue {
-  @Prop(Object) profileData: ProfileData | {} = {};
+  @Prop(Object) profileData!: ProfileData | {};
 }
 </script>
 

@@ -38,10 +38,11 @@
 import { Component, Prop } from "vue-property-decorator";
 import Vue from "vue";
 import axios from "axios";
+import { ProfileData } from "@/interfaces/ProfileData.interface";
 
 @Component({})
-export default class ProfileData extends Vue {
-  @Prop(Object) profileData: ProfileData | {} = {};
+export default class Profile extends Vue {
+  @Prop(Object) profileData!: ProfileData | {};
 
   toDisplayDate(timestamp: number): string {
     const date = new Date(timestamp * 1000);

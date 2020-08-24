@@ -28,14 +28,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop } from "vue-property-decorator";
+import { Component } from "vue-property-decorator";
 import Vue from "vue";
-import { UsageData } from "@/interfaces/UsageData.interface";
 
 @Component({})
-export default class Usage extends Vue {
-  @Prop(Array) usageData: UsageData[] = [];
-}
+export default class WhoAreYou extends Vue {}
 </script>
 
 <style lang="scss" scoped>

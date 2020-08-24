@@ -1,4 +1,4 @@
-export interface ContactData {
+export interface ProfileData {
   company: string;
   customerId: string;
   signupDate: number;
