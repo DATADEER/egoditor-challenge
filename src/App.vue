@@ -53,9 +53,9 @@ export default class App extends Vue {
   isEditingCompanyTitle = false;
 
   saveCompanyTitle(): void {
-    console.log("lang", this.$root.i18n);
     if (this.isEditingCompanyTitle) {
-      this.companyTitle = this.$refs.companyTitleInput.innerText;
+      this.companyTitle = (this.$refs
+        .companyTitleInput as HTMLElement).innerText;
     }
     this.isEditingCompanyTitle = !this.isEditingCompanyTitle;
   }
