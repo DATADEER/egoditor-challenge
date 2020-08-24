@@ -61,6 +61,7 @@ export default class App extends Vue {
   profileData: ProfileData | { company: string } = {
     company: "Loading..."
   };
+  isEditingCompanyTitle = false;
   availableTabs = [
     "account",
     "settings",
@@ -69,7 +70,6 @@ export default class App extends Vue {
     "apikeys",
     "billing"
   ];
-  isEditingCompanyTitle = false;
   currentTab = "account";
 
   isSelectedTab(tab: string): boolean {
