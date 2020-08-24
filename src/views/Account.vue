@@ -1,7 +1,7 @@
 <template>
   <div class="account__container">
     <div class="user-data__card">
-      <Profile class="profile-component"></Profile>
+      <Profile :profileData="profileData" class="profile-component"></Profile>
       <UserData></UserData>
     </div>
     <div>
@@ -19,9 +19,12 @@ import WhoAreYou from "@/components/WhoAreYou.vue";
 import axios from "axios";
 import UserData from "@/components/UserData.vue";
 import Profile from "@/components/Profile.vue";
+import ProfileData from "@/components/Profile.vue";
 
 @Component({ components: { Profile, UserData, Usage, WhoAreYou } })
-export default class Account extends Vue {}
+export default class Account extends Vue {
+  @Prop(Object) profileData: ProfileData | {} = {};
+}
 </script>
 
 <style lang="scss" scoped>

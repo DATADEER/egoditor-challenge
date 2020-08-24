@@ -35,25 +35,17 @@
 </template>
 
 <script lang="ts">
-import { Component } from "vue-property-decorator";
+import { Component, Prop } from "vue-property-decorator";
 import Vue from "vue";
 import axios from "axios";
 
 @Component({})
 export default class ProfileData extends Vue {
-  profileData: ProfileData | {} = {};
+  @Prop(Object) profileData: ProfileData | {} = {};
 
   toDisplayDate(timestamp: number): string {
     const date = new Date(timestamp * 1000);
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-  }
-
-  async mounted() {
-    const profileDataRequest = axios.get(
-      "https://my-json-server.typicode.com/DATADEER/egoditor-mock-api/profile"
-    );
-    const profileDataResponse = await profileDataRequest;
-    this.profileData = profileDataResponse.data;
   }
 }
 </script>

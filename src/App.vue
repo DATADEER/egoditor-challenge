@@ -10,7 +10,7 @@
             class="company-title__input"
             :class="{ active: isEditingCompanyTitle }"
             ref="companyTitleInput"
-            >{{ companyTitle }}</span
+            >{{ profileData.company }}</span
           >
           <button class="company-title__button" @click="saveCompanyTitle">
             <span v-if="isEditingCompanyTitle">
@@ -32,7 +32,7 @@
           <a>{{ $t("titles.billing") }}</a>
         </div>
       </div>
-      <Account></Account>
+      <Account :profileData="profileData"></Account>
     </section>
   </v-app>
 </template>
@@ -41,6 +41,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import Navbar from "@/components/Navbar.vue";
 import Account from "@/views/Account.vue";
+import axios from "axios";
 
 @Component({
   components: {
@@ -49,15 +50,23 @@ import Account from "@/views/Account.vue";
   }
 })
 export default class App extends Vue {
-  companyTitle = "Egoditor GmbH"; //TODO: Fill with API Response
+  profileData: ProfileData | {} = {};
   isEditingCompanyTitle = false;
 
   saveCompanyTitle(): void {
     if (this.isEditingCompanyTitle) {
-      this.companyTitle = (this.$refs
+      this.profileData.company = (this.$refs
         .companyTitleInput as HTMLElement).innerText;
     }
     this.isEditingCompanyTitle = !this.isEditingCompanyTitle;
+  }
+
+  async mounted() {
+    const profileDataRequest = axios.get(
+      "https://my-json-server.typicode.com/DATADEER/egoditor-mock-api/profile"
+    );
+    const profileDataResponse = await profileDataRequest;
+    this.profileData = profileDataResponse.data;
   }
 }
 </script>
