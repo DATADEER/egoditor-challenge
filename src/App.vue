@@ -24,15 +24,19 @@
       </div>
       <div class="tab-nav__wrapper">
         <div class="tab-nav__container">
-          <a class="active">{{ $t("titles.account") }}</a>
-          <a>{{ $t("titles.settings") }}</a>
-          <a>{{ $t("titles.usermanagement") }}</a>
-          <a>{{ $t("titles.whitelabel") }}</a>
-          <a>{{ $t("titles.apikeys") }}</a>
-          <a>{{ $t("titles.billing") }}</a>
+          <a
+            @click="currentTab = tab"
+            v-for="tab in availableTabs"
+            :key="tab"
+            :class="{ active: isSelectedTab(tab) }"
+            >{{ $t(`titles.${tab}`) }}</a
+          >
         </div>
       </div>
-      <Account :profileData="profileData"></Account>
+      <Account
+        v-if="isSelectedTab('account')"
+        :profileData="profileData"
+      ></Account>
       <notifications group="default" />
     </section>
   </v-app>
@@ -57,7 +61,20 @@ export default class App extends Vue {
   profileData: ProfileData | { company: string } = {
     company: "Loading..."
   };
+  availableTabs = [
+    "account",
+    "settings",
+    "usermanagement",
+    "whitelabel",
+    "apikeys",
+    "billing"
+  ];
   isEditingCompanyTitle = false;
+  currentTab = "account";
+
+  isSelectedTab(tab: string): boolean {
+    return tab === this.currentTab;
+  }
 
   async handleCompanyTitle(): Promise<void> {
     if (this.isEditingCompanyTitle) {
