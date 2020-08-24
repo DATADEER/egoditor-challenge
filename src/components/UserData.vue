@@ -96,9 +96,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop } from "vue-property-decorator";
+import { Component } from "vue-property-decorator";
 import Vue from "vue";
-import { UsageData } from "@/interfaces/UsageData.interface";
 import { ContactData } from "@/interfaces/ContactData.interface";
 import axios from "axios";
 import { API_URL } from "@/common/constants";
@@ -121,7 +120,7 @@ export default class UserData extends Vue {
         `${API_URL}/contact`,
         this.contactData
       );
-      const contactDataResponse = await contactDataRequest;
+      await contactDataRequest;
     } catch (error) {
       logError(this.$t("messages.error.title"), error);
       return;

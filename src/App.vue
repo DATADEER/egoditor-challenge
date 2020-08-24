@@ -59,7 +59,7 @@ export default class App extends Vue {
   };
   isEditingCompanyTitle = false;
 
-  async handleCompanyTitle(): void {
+  async handleCompanyTitle(): Promise<void> {
     if (this.isEditingCompanyTitle) {
       this.profileData.company = (this.$refs
         .companyTitleInput as HTMLElement).innerText;
@@ -68,7 +68,7 @@ export default class App extends Vue {
           `${API_URL}/profile`,
           this.profileData
         );
-        const profileDataResponse = await profileDataRequest;
+        await profileDataRequest;
       } catch (error) {
         logError(this.$t("messages.error.title"), error);
         return;
