@@ -28,14 +28,13 @@ import { Component, Prop } from "vue-property-decorator";
 import Vue from "vue";
 import { UsageData } from "@/interfaces/UsageData.interface";
 import axios from "axios";
+import { API_URL } from "@/common/constants";
 
 @Component({})
 export default class Usage extends Vue {
   usageData: UsageData[] = [];
   async mounted() {
-    const usageDataRequest = axios.get(
-      "https://my-json-server.typicode.com/DATADEER/egoditor-mock-api/usage"
-    );
+    const usageDataRequest = axios.get(`${API_URL}/usage`);
     const usageDataResponse = await usageDataRequest;
     this.usageData = usageDataResponse.data;
   }
@@ -52,7 +51,7 @@ export default class Usage extends Vue {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  @media (max-width: $screen-small) {
+  @media (max-width: $screen-medium) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: $spacer-5;

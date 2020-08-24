@@ -42,6 +42,7 @@ import { Component, Vue } from "vue-property-decorator";
 import Navbar from "@/components/Navbar.vue";
 import Account from "@/views/Account.vue";
 import axios from "axios";
+import { API_URL } from "@/common/constants";
 
 @Component({
   components: {
@@ -62,9 +63,7 @@ export default class App extends Vue {
   }
 
   async mounted() {
-    const profileDataRequest = axios.get(
-      "https://my-json-server.typicode.com/DATADEER/egoditor-mock-api/profile"
-    );
+    const profileDataRequest = axios.get(`${API_URL}/profile`);
     const profileDataResponse = await profileDataRequest;
     this.profileData = profileDataResponse.data;
   }

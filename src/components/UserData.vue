@@ -88,7 +88,9 @@
       </v-container>
     </v-form>
     <div class="user-data__footer">
-      <button class="user-data__button--save">{{ $t("save") }}</button>
+      <button @click="saveContactData" class="user-data__button--save">
+        {{ $t("save") }}
+      </button>
     </div>
   </div>
 </template>
@@ -99,6 +101,7 @@ import Vue from "vue";
 import { UsageData } from "@/interfaces/UsageData.interface";
 import { ContactData } from "@/interfaces/ContactData.interface";
 import axios from "axios";
+import { API_URL } from "@/common/constants";
 
 @Component({})
 export default class UserData extends Vue {
@@ -112,10 +115,13 @@ export default class UserData extends Vue {
     ];
   }
 
+  async saveContactData() {
+    const contactDataRequest = axios.post(`${API_URL}/contact`);
+    const contactDataResponse = await contactDataRequest;
+  }
+
   async mounted() {
-    const contactDataRequest = axios.get(
-      "https://my-json-server.typicode.com/DATADEER/egoditor-mock-api/contact"
-    );
+    const contactDataRequest = axios.get(`${API_URL}/contact`);
     const contactDataResponse = await contactDataRequest;
     this.contactData = contactDataResponse.data;
   }
