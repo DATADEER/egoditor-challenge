@@ -29,14 +29,20 @@ import Vue from "vue";
 import { UsageData } from "@/interfaces/UsageData.interface";
 import axios from "axios";
 import { API_URL } from "@/common/constants";
+import { logError } from "@/common/helper";
 
 @Component({})
 export default class Usage extends Vue {
   usageData: UsageData[] = [];
   async mounted() {
-    const usageDataRequest = axios.get(`${API_URL}/usage`);
-    const usageDataResponse = await usageDataRequest;
-    this.usageData = usageDataResponse.data;
+    try {
+      const usageDataRequest = axios.get(`${API_URL}/usage`);
+      const usageDataResponse = await usageDataRequest;
+      this.usageData = usageDataResponse.data;
+    } catch (error) {
+      logError(this.$t("messages.error.title"), error);
+      return;
+    }
   }
 }
 </script>

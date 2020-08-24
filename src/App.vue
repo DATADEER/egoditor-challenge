@@ -12,7 +12,7 @@
             ref="companyTitleInput"
             >{{ profileData.company }}</span
           >
-          <button class="company-title__button" @click="saveCompanyTitle">
+          <button class="company-title__button" @click="handleCompanyTitle">
             <span v-if="isEditingCompanyTitle">
               {{ $t("save") }} <i class="fas fa-save"></i
             ></span>
@@ -33,6 +33,7 @@
         </div>
       </div>
       <Account :profileData="profileData"></Account>
+      <notifications group="default" />
     </section>
   </v-app>
 </template>
@@ -44,6 +45,7 @@ import Account from "@/views/Account.vue";
 import axios from "axios";
 import { API_URL } from "@/common/constants";
 import { ProfileData } from "@/interfaces/ProfileData.interface";
+import { logError, logSuccess } from "@/common/helper";
 
 @Component({
   components: {
@@ -57,19 +59,37 @@ export default class App extends Vue {
   };
   isEditingCompanyTitle = false;
 
-  saveCompanyTitle(): void {
+  async handleCompanyTitle(): void {
     if (this.isEditingCompanyTitle) {
       this.profileData.company = (this.$refs
         .companyTitleInput as HTMLElement).innerText;
+      try {
+        const profileDataRequest = axios.post(
+          `${API_URL}/profile`,
+          this.profileData
+        );
+        const profileDataResponse = await profileDataRequest;
+      } catch (error) {
+        logError(this.$t("messages.error.title"), error);
+        return;
+      }
+      logSuccess(
+        this.$t("messages.success.title"),
+        this.$t("messages.success.text")
+      );
     }
-
     this.isEditingCompanyTitle = !this.isEditingCompanyTitle;
   }
 
   async mounted() {
-    const profileDataRequest = axios.get(`${API_URL}/profile`);
-    const profileDataResponse = await profileDataRequest;
-    this.profileData = profileDataResponse.data;
+    try {
+      const profileDataRequest = axios.get(`${API_URL}/profile`);
+      const profileDataResponse = await profileDataRequest;
+      this.profileData = profileDataResponse.data;
+    } catch (error) {
+      logError(this.$t("messages.error.title"), error);
+      return;
+    }
   }
 }
 </script>

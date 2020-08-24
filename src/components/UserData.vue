@@ -102,6 +102,7 @@ import { UsageData } from "@/interfaces/UsageData.interface";
 import { ContactData } from "@/interfaces/ContactData.interface";
 import axios from "axios";
 import { API_URL } from "@/common/constants";
+import { logError, logSuccess } from "@/common/helper";
 
 @Component({})
 export default class UserData extends Vue {
@@ -115,14 +116,31 @@ export default class UserData extends Vue {
   }
 
   async saveContactData() {
-    const contactDataRequest = axios.post(`${API_URL}/contact`);
-    const contactDataResponse = await contactDataRequest;
+    try {
+      const contactDataRequest = axios.post(
+        `${API_URL}/contact`,
+        this.contactData
+      );
+      const contactDataResponse = await contactDataRequest;
+    } catch (error) {
+      logError(this.$t("messages.error.title"), error);
+      return;
+    }
+    logSuccess(
+      this.$t("messages.success.title"),
+      this.$t("messages.success.text")
+    );
   }
 
   async mounted() {
-    const contactDataRequest = axios.get(`${API_URL}/contact`);
-    const contactDataResponse = await contactDataRequest;
-    this.contactData = contactDataResponse.data;
+    try {
+      const contactDataRequest = axios.get(`${API_URL}/contact`);
+      const contactDataResponse = await contactDataRequest;
+      this.contactData = contactDataResponse.data;
+    } catch (error) {
+      logError(this.$t("messages.error.title"), error);
+      return;
+    }
   }
 }
 </script>

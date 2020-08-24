@@ -52,5 +52,15 @@
     "loginemail": "Login Email",
     "password": "Passwort",
     "changeemail": "Email Ändern"
+  },
+  "messages": {
+    "error": {
+      "title": "Es ist ein Fehler aufgetreten",
+      "text": "Leider ist hier ein Fehler aufgetreten. Bitte versuchen sie es später nochmal"
+    },
+    "success": {
+      "title": "Erfolg",
+      "text": "Aktion wurde erfolgreich ausgeführt"
+    }
   }
 }
