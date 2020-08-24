@@ -9,7 +9,7 @@
       <div class="profile-tile__container profile-tile__container--narrow">
         <p class="profile-tile__label">{{ $t("profile.signupdate") }}</p>
         <p class="profile-tile__value">
-          {{ toDisplayDate || profileData.signupDate }}
+          {{ toDisplayDate(profileData.signupDate) }}
         </p>
       </div>
       <div class="profile-tile__container profile-tile__container--narrow">
@@ -18,7 +18,17 @@
       </div>
       <div class="profile-tile__container profile-tile__container--wide">
         <p class="profile-tile__label">{{ $t("titles.account") }}</p>
-        <p class="profile-tile__value">{{ profileData.accountType }}</p>
+        <div class="profile-tile-button__wrapper">
+          <button class="profile-tile__button">
+            {{ $t("profile.password") }}
+          </button>
+        </div>
+        <p class="profile-tile__value">{{ profileData.email }}</p>
+        <div class="profile-tile-button__wrapper">
+          <button class="profile-tile__button">
+            {{ $t("profile.changeemail") }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -29,16 +39,14 @@ import { Component } from "vue-property-decorator";
 import Vue from "vue";
 import axios from "axios";
 
-@Component({
-  filters: {
-    toDisplayDate(timestamp: number): string {
-      const date = new Date(timestamp);
-      return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-    }
-  }
-})
+@Component({})
 export default class ProfileData extends Vue {
   profileData: ProfileData | {} = {};
+
+  toDisplayDate(timestamp: number): string {
+    const date = new Date(timestamp * 1000);
+    return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+  }
 
   async mounted() {
     const profileDataRequest = axios.get(
@@ -77,6 +85,22 @@ export default class ProfileData extends Vue {
 
 .profile-tile__container--wide {
   grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.profile-tile-button__wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile-tile__button {
+  color: $link-blue;
+  font-weight: $weight-bolder;
+  font-size: $size-label;
+  cursor: pointer;
+  user-select: none;
 }
 
 .profile-tile__label {

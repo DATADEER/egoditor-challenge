@@ -12,14 +12,14 @@
             ref="companyTitleInput"
             >{{ companyTitle }}</span
           >
-          <div class="company-title__button" @click="saveCompanyTitle">
+          <button class="company-title__button" @click="saveCompanyTitle">
             <span v-if="isEditingCompanyTitle">
               {{ $t("save") }} <i class="fas fa-save"></i
             ></span>
             <span v-else>
               {{ $t("edit") }} <i class="fas fa-pencil-alt"></i
             ></span>
-          </div>
+          </button>
         </div>
       </div>
       <div class="tab-nav__wrapper">
