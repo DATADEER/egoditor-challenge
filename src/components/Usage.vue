@@ -52,6 +52,11 @@ export default class Usage extends Vue {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
+  @media (max-width: $screen-small) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: $spacer-5;
+  }
 }
 
 .usage-tile__container {

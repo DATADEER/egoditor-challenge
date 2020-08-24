@@ -10,8 +10,10 @@
         <h2 class="logo__text">QR Code Generator</h2>
       </div>
       <div class="vertical-separator"></div>
-      <i class="fas fa-angle-left arrow-left__icon"></i>
-      <i class="fas fa-bars menu__icon"></i>
+      <div class="menu-button__container">
+        <i class="fas fa-angle-left arrow-left__icon"></i>
+        <i class="fas fa-bars menu__icon"></i>
+      </div>
     </div>
     <div class="right-nav__container">
       <img
@@ -33,6 +35,10 @@
       <div class="vertical-separator"></div>
       <i class="fas fa-user user__icon"></i>
       <span class="account_link">{{ $t("titles.account") }}</span>
+    </div>
+    <div class="menu-button__container">
+      <i class="fas fa-angle-left arrow-left__icon"></i>
+      <i class="fas fa-bars menu__icon"></i>
     </div>
   </nav>
 </template>
@@ -96,14 +102,36 @@ nav {
   box-shadow: $box-shadow-bottom-hard;
 }
 
+.menu-button__container {
+  display: none;
+}
+
 .left-nav__container {
   display: inline-flex;
   align-items: center;
   margin-right: auto;
 
+  .menu-button__container {
+    display: block;
+    @media (max-width: $screen-extra-small) {
+      display: none;
+    }
+  }
+
   .vertical-separator {
     margin-left: 3.5rem;
     margin-right: $spacer-5;
+
+    @media (max-width: $screen-extra-small) {
+      display: none;
+    }
+  }
+}
+
+.menu-button__container {
+  @media (max-width: $screen-extra-small) {
+    display: block;
+    float: right;
   }
 }
 
@@ -113,6 +141,10 @@ nav {
 
   .vertical-separator {
     margin-right: $spacer-5;
+  }
+
+  @media (max-width: $screen-extra-small) {
+    display: none;
   }
 }
 

@@ -36,6 +36,13 @@ export default class Account extends Vue {
   grid-template-columns: 1.3fr 2fr;
   grid-column-gap: $spacer-8;
   padding: $spacer-7 $spacer-8;
+
+  @media (max-width: $screen-small) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 0;
+    padding: 0 $spacer-3;
+  }
 }
 
 .usage-component {
